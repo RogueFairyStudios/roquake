@@ -29,8 +29,13 @@
 #include "../header/local.h"
 
 #ifdef __APPLE__
-#include <libjpeg/jpeglib.h>
+
+#include "/opt/libjpeg-turbo/include/jpeglib.h"
+#include "/opt/libjpeg-turbo/include/jerror.h"
+/*
+#include <libjpeg/jpeglib.h> 
 #include <libjpeg/jerror.h>
+*/
 #else
 #include <jpeglib.h>
 #include <jerror.h>

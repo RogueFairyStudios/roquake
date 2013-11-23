@@ -173,7 +173,7 @@ INCLUDE := -I/usr/local/include
 else ifeq ($(OSTYPE),OpenBSD)
 INCLUDE := -I/usr/local/include
 else ifeq ($(OSTYPE),Darwin)
-INCLUDE :=
+INCLUDE := -I/opt/libjpeg-turbo/include
 endif
 
 # ----------

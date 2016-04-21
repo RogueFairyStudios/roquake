@@ -33,7 +33,7 @@
 #include "crc.h"
 
 /* Should have 4 characters. */
-#define VERSION "5.11"
+#define VERSION "1.0" //"5.11"
 
 #define BASEDIRNAME "baseq2"
 

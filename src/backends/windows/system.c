@@ -161,14 +161,14 @@ Sys_Init(void)
 	}
 
 	/* While Quake II should run on older versions,
-	   limit Yamagi Quake II to Windows XP and
+	   limit Roguake Engine II to Windows XP and
 	   above. Testing older version would be a
 	   PITA. */
 	if (!((vinfo.dwMajorVersion > 5) ||
 		  ((vinfo.dwMajorVersion == 5) &&
 		   (vinfo.dwMinorVersion >= 1))))
 	{
-		Sys_Error("Yamagi Quake II needs Windows XP or higher!\n");
+		Sys_Error("Roguake Engine II needs Windows XP or higher!\n");
 	}
 
 
@@ -707,7 +707,7 @@ WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	Sys_RedirectStdout();
 #endif
 
-	printf("Yamagi Quake II v%s\n", VERSION);
+	printf("Roguake Engine II v%s\n", VERSION);
 	printf("=====================\n\n");
 
 #ifndef DEDICATED_ONLY

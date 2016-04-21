@@ -1,4 +1,5 @@
 /*
+ * Copyright (C) 2014 Rogue Fairy Studios - Edward Facundo
  * Copyright (C) 2012 Yamagi Burmeister
  * Copyright (C) 2010 skuller.net
  *

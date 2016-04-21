@@ -281,7 +281,7 @@ Qcommon_Init(int argc, char **argv)
 	}
 #endif
 
-	Com_Printf("==== Yamagi Quake II Initialized ====\n\n");
+	Com_Printf("==== Roguake Engine II Initialized ====\n\n");
 	Com_Printf("*************************************\n\n");
 }
 

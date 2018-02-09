@@ -43,7 +43,8 @@
 
 void jpeg_memory_src(j_decompress_ptr cinfo,
 		unsigned char *inbuffer,
-		unsigned long insize);
+                unsigned long insize);
+
 
 void
 jpg_null(j_decompress_ptr cinfo)
@@ -63,7 +64,7 @@ jpg_skip_input_data(j_decompress_ptr cinfo, long num_bytes)
 	cinfo->src->next_input_byte += (size_t)num_bytes;
 	cinfo->src->bytes_in_buffer -= (size_t)num_bytes;
 }
-
+/*
 void
 jpeg_mem_src(j_decompress_ptr cinfo, unsigned char *mem, unsigned long len)
 {
@@ -78,7 +79,7 @@ jpeg_mem_src(j_decompress_ptr cinfo, unsigned char *mem, unsigned long len)
 	cinfo->src->term_source = jpg_null;
 	cinfo->src->bytes_in_buffer = len;
 	cinfo->src->next_input_byte = mem;
-}
+} */
 
 void
 LoadJPG(char *origname, byte **pic, int *width, int *height)

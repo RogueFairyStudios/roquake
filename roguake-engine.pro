@@ -138,8 +138,8 @@ SOURCES += \
     src/server/sv_user.c \
     src/server/sv_world.c
 
-#include(deployment.pri)
-#qtcAddDeployment()
+include(deployment.pri)
+qtcAddDeployment()
 
 HEADERS += \
     src/backends/generic/header/input.h \

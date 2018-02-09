@@ -643,13 +643,14 @@ void
 CL_ParseTEnt(void)
 {
 	int type;
-	vec3_t pos, pos2, dir;
+    vec3_t pos, pos2, dir;
 	explosion_t *ex;
 	int cnt;
 	int color;
 	int r;
 	int ent;
 	int magnitude;
+    int amount_blood = ent * 40; // toy: change this to amount of blood with ent type.
 
 	type = MSG_ReadByte(&net_message);
 
@@ -658,7 +659,8 @@ CL_ParseTEnt(void)
 		case TE_BLOOD: /* bullet hitting flesh */
 			MSG_ReadPos(&net_message, pos);
 			MSG_ReadDir(&net_message, dir);
-			CL_ParticleEffect(pos, dir, 0xe8, 60);
+                CL_ParticleEffect(pos, dir, 0xe8, amount_blood);
+               // CL_FlyEffect(&cl_entities[0],pos);
 			break;
 
 		case TE_GUNSHOT: /* bullet hitting wall */
@@ -669,7 +671,7 @@ CL_ParseTEnt(void)
 
 			if (type == TE_GUNSHOT)
 			{
-				CL_ParticleEffect(pos, dir, 0, 40);
+                CL_ParticleEffect(pos, dir, 0, 3000); //40
 			}
 
 			else

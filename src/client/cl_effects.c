@@ -381,7 +381,7 @@ CL_AddMuzzleFlash2(void)
 			dl->color[0] = 1;
 			dl->color[1] = 1;
 			dl->color[2] = 0;
-			CL_ParticleEffect(origin, vec3_origin, 0, 40);
+            CL_ParticleEffect(origin, vec3_origin, 0, 840);
 			CL_SmokeAndFlash(origin);
 			S_StartSound(NULL, ent, CHAN_WEAPON,
 				S_RegisterSound("infantry/infatck1.wav"), 1, ATTN_NORM, 0);
@@ -1007,7 +1007,7 @@ CL_BlasterParticles(vec3_t org, vec3_t dir)
 
 	time = (float)cl.time;
 
-	count = 40;
+    count = 40;
 
 	for (i = 0; i < count; i++)
 	{
@@ -1033,7 +1033,7 @@ CL_BlasterParticles(vec3_t org, vec3_t dir)
 
 		p->accel[0] = p->accel[1] = 0;
 		p->accel[2] = -PARTICLE_GRAVITY;
-		p->alpha = 1.0;
+        p->alpha = 1.0;
 
 		p->alphavel = -1.0f / (0.5f + frandk() * 0.3f);
 	}
@@ -1078,12 +1078,12 @@ CL_BlasterTrail(vec3_t start, vec3_t end)
 
 		p->alpha = 1.0;
 		p->alphavel = -1.0f / (0.3f + frandk() * 0.2f);
-		p->color = 0xe0;
+        p->color = 0xe3; //0xe0
 
 		for (j = 0; j < 3; j++)
 		{
 			p->org[j] = move[j] + crandk();
-			p->vel[j] = crandk() * 5;
+            p->vel[j] = crandk() * 5;
 			p->accel[j] = 0;
 		}
 
@@ -2897,7 +2897,7 @@ CL_ParticleSmokeEffect(vec3_t org, vec3_t dir, int color,
 		VectorMA(p->vel, d, u, p->vel);
 
 		p->accel[0] = p->accel[1] = p->accel[2] = 0;
-		p->alpha = 1.0;
+        p->alpha = 1.0;
 
 		p->alphavel = -1.0f / (0.5f + frandk() * 0.3f);
 	}
@@ -2938,7 +2938,7 @@ CL_BlasterParticles2(vec3_t org, vec3_t dir, unsigned int color)
 		for (j = 0; j < 3; j++)
 		{
 			p->org[j] = org[j] + ((randk() & 7) - 4) + d * dir[j];
-			p->vel[j] = dir[j] * 30 + crandk() * 40;
+            p->vel[j] = dir[j] * 30 + crandk() * 4000; //40
 		}
 
 		p->accel[0] = p->accel[1] = 0;

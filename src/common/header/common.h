@@ -64,9 +64,9 @@
 #endif
 
 #ifdef _WIN32
- #define CFGDIR "YamagiQ2"
+ #define CFGDIR "Roguake" //"YamagiQ2"
 #else
- #define CFGDIR ".yq2"
+ #define CFGDIR ".roguefairy"
 #endif
 
 #ifdef _WIN32

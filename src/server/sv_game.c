@@ -446,7 +446,7 @@ SV_InitGameProgs(void)
 
 	if (!ge)
 	{
-		Com_Error(ERR_DROP, "failed to load game DLL");
+        Com_Error(ERR_DROP, "failed to load game DLL/.SO");
 	}
 
 	if (ge->apiversion != GAME_API_VERSION)

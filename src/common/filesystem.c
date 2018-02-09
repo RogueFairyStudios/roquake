@@ -1204,7 +1204,7 @@ FS_LoadPK3(const char *packPath)
 
 	numFiles = global.number_entry;
 
-	if ((numFiles > MAX_FILES_IN_PACK) || (numFiles == 0))
+    if ((numFiles > 30000/*MAX_FILES_IN_PACK*/) || (numFiles == 0))
 	{
 		unzClose(handle);
 		Com_Error(ERR_FATAL, "FS_LoadPK3: '%s' has %i files",

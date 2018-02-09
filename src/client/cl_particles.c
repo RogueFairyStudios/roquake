@@ -33,22 +33,23 @@ int cl_numparticles = MAX_PARTICLES;
 void
 CL_ClearParticles(void)
 {
-	int i;
+    int i;
 
-	free_particles = &particles[0];
-	active_particles = NULL;
+    free_particles = &particles[0];
+    active_particles = NULL;
 
-	for (i = 0; i < cl_numparticles; i++)
-	{
-		particles[i].next = &particles[i + 1];
-	}
+    for (i = 0; i < cl_numparticles; i++)
+    {
+        particles[i].next = &particles[i + 1];
+    }
 
-	particles[cl_numparticles - 1].next = NULL;
+    particles[cl_numparticles - 1].next = NULL;
 }
 
 void
 CL_ParticleEffect(vec3_t org, vec3_t dir, int color, int count)
 {
+    // TODO: add blood stains on floor/walls ( Toy )
 	int i, j;
 	cparticle_t *p;
 	float d;
@@ -69,17 +70,17 @@ CL_ParticleEffect(vec3_t org, vec3_t dir, int color, int count)
 		p->color = color + (randk() & 7);
 		d = randk() & 31;
 
-		for (j = 0; j < 3; j++)
+        for (j = 0; j < 3; j++)
 		{
 			p->org[j] = org[j] + ((randk() & 7) - 4) + d * dir[j];
 			p->vel[j] = crandk() * 20;
 		}
 
 		p->accel[0] = p->accel[1] = 0;
-		p->accel[2] = -PARTICLE_GRAVITY + 0.2f;
+        p->accel[2] = -PARTICLE_GRAVITY + 0.2f;
 		p->alpha = 1.0;
 
-		p->alphavel = -1.0 / (0.5 + frandk() * 0.3);
+        p->alphavel = -1.0 / (0.5 + frandk() * 0.3);
 	}
 }
 

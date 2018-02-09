@@ -847,7 +847,7 @@ PM_CheckJump(void)
 	pm->s.pm_flags |= PMF_JUMP_HELD;
 
 	pm->groundentity = NULL;
-	pml.velocity[2] += 270;
+    pml.velocity[2] += 600; // 270
 
 	if (pml.velocity[2] < 270)
 	{
